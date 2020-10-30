@@ -20,11 +20,9 @@ def long_pattern():
 #fourth function with no parameters
 def run():
     print("Analysing patterns...")
-    patterns = {"short sequence":short_pattern(), 
-                "medium sequence": medium_pattern(), 
-                "long sequence":long_pattern()}
-    print(patterns)
-
+    patterns = {"short sequence":short_pattern(), "medium sequence": medium_pattern(), "long sequence":long_pattern()}
+    for key, value in patterns.items():
+        print(f"{key}: {value}") 
 #call the fourth function
 run()
     
