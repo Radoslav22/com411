@@ -25,4 +25,3 @@ def run():
     plt.show()
     
 run()
-t
