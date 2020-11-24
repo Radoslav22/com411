@@ -16,7 +16,7 @@ def animate(frame):
 def run():
     global fig
     
-    simple_animation=animation.FuncAnimation(fig, animate, frames=10, interval=100)
+    simple_animation=animation.FuncAnimation(fig, animate, frames=720, interval=100)
    
     plt.show()
 
