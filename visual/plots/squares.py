@@ -15,7 +15,7 @@ def medium ():
 def large ():
   x = [1,6,6,1,1]
   y = [1,1,6,6,1]
-  plt.plot(x,y, 'b-p')
+  plt.plot(x,y, 'b-.')
   
 
 def run():
