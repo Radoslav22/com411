@@ -14,6 +14,13 @@ class Robot:
     self.name = "Robot"
     self.age = 0
 
+  def grow(self):
+      self.age = self.age + 1
+      return self.age
+  
+  def __str__(self):
+     return f"My name is {self.name} and I am {self.age} years old."
+
   # An instance method
   def display(self):
     print(f"I am {self.name}")
@@ -22,6 +29,7 @@ if (__name__ == "__main__"):
     robot = Robot()
     robot.display()
     Robot.the_laws()
+    robot.__str__()
     
 class Human:
     MAX_ENERGY = 100
@@ -32,8 +40,11 @@ class Human:
          self.age = 0
          self.energy = Human.MAX_ENERGY
          
+    def grow(self):
+        self.age = self.age + 1
+         
     def display(self):
-        print(f"I am {self.name}")
+        print(f"I am {self.age}")
         
     def __str__(self):
         return f"My name is {self.name} and I am {self.age} years old."
@@ -41,6 +52,7 @@ class Human:
     
 if (__name__ == "__main__"):
     human = Human()
+    human.grow()
     human.display()
     human.__str__()
     
