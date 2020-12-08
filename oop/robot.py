@@ -1,4 +1,6 @@
-class Robot:
+from inhabitant import Inhabitant 
+
+class Robot(Inhabitant):
     
     MAX_ENERGY = 100  
     # A class attribute
@@ -16,29 +18,13 @@ class Robot:
         self.age = age
         self.energy = Robot.MAX_ENERGY
 
-    def grow(self):
-      self.age = self.age + 1
-      return self.age
   
     def __str__(self):
         return f"My name is {self.name} and I am {self.age} years old and my energy is {self.energy}"
+    
+    def __repr__(self):
+        return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
 
-    # An instance method
-    def display(self):
-        print(f"I am {self.name}")
-  
-    def eat(self,amount):
-        potential_energy = self.energy + amount
-        if(potential_energy > Robot.MAX_ENERGY):
-            self.energy = Robot.MAX_ENERGY
-        else:
-            self.energy = potential_energy
-    def move(self,distance):
-        potential_energy = self.energy - distance
-        if(potential_energy < 0):
-            self.energy = 0
-        else:
-            self.energy = potential_energy
     
 if (__name__ == "__main__"):
     robot = Robot()

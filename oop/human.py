@@ -1,4 +1,6 @@
-class Human:
+from inhabitant import Inhabitant
+
+class Human(Inhabitant):
     MAX_ENERGY = 100
     # An initialiser (special instance method) 
     def __init__(self, name="Human", age = 0):
@@ -7,8 +9,6 @@ class Human:
          self.age = age
          self.energy = Human.MAX_ENERGY
          
-    def grow(self):
-        self.age = self.age + 1
    
     #magic methods   
     def __str__(self):
@@ -16,20 +16,7 @@ class Human:
     
     def __repr__(self):
         return f"human(name={self.name}, age={self.age}, energy={self.energy})"
-    def display(self):
-        print(f"I am {self.name}")
     
-    def eat(self, amount):
-        if(self.energy + amount > Human.MAX_ENERGY):
-            self.energy = Human.MAX_ENERGY
-        else:
-            self.energy += amount
-    def move(self, distance):
-        potential_energy = self.energy - distance
-        if(potential_energy < 0):
-            self.energy = 0
-        else:
-            self.energy = potential_energy
 
     
 if (__name__ == "__main__"):
