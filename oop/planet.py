@@ -1,40 +1,51 @@
 from human import Human
 from robot import Robot
+from inhabitant import Inhabitant
 
 class Planet:
     
     def __init__(self):
-        self.inhabitants = {
-            'humans' :[],
-            'robots':[]
-            }
+        self.inhabitants = []
        
     
     def __repr__(self):
-        return f"planet(humans = {self.inhabitants['humans']}, robots = {self.inhabitants['robots']})"
+        return f"planet(humans = {self.inhabitants}, robots = {self.inhabitants})"
     
     def __str__(self):
-        return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots"
+        num_human = 0
+        num_robot = 0
+        
+        for inhabitant in planet.inhabitants:
+            if isinstance(inhabitant, Human):
+                num_human += 1
+
+                
+            elif isinstance(inhabitant, Robot):
+                num_robot +=1
+                
+        
+                
+        return f"Found {num_human} humans and {num_robot} robots"
     
     #add human in the humans list    
-    def add_human(self, human):
-        self.inhabitants['humans'].append(human)
-    #add robot in the robot list 
-    def add_robot(self, robot):
-        self.inhabitants['robots'].append(robot)
-    #remove human from the humans list     
-    def remove_human(self, human):
-        self.inhabitants['humans'].remove(human)
+    def add_inhabitant(self, inhabitant):
+        self.inhabitants.append(inhabitant)
+    
         
     #remove robot from the robots list 
-    def remove_robot(self, robot):
-         self.inhabitants['robots'].remove(robot)
+    def remove_inhabitant(self, inhabitant):
+         self.inhabitants.remove(inhabitant)
+         
+    
+
         
 if (__name__ == "__main__"):
     planet=Planet()
     print(repr(planet))
     print(planet)
     rado = Human("Rado")
-    planet.add_human(rado)
+    poli = Robot("Poli")
+    planet.add_inhabitant(rado)
+    planet.add_inhabitant(poli)
     print(repr(planet))
     print(planet)
