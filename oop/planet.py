@@ -9,7 +9,7 @@ class Planet:
        
     
     def __repr__(self):
-        return f"planet(humans = {self.inhabitants}, robots = {self.inhabitants})"
+        return f"planet(inhabitants = {self.inhabitants})"
     
     def __str__(self):
         num_human = 0
