@@ -27,7 +27,7 @@ class Universe:
 
     for index in range(random.randint(1, 10)):
       human = Human(f"Human{index}")
-      self.planet.add(human)
+      planet.add(human)
 
     # add to list of planets
     self.planets.append(planet)
